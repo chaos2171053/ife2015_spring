@@ -40,4 +40,332 @@ p.capitalize{
 }
 p.pNoWrap{
 	white-space: pre-wrap;
+}		
+
+.divAlign1{
+	margin: 0 auto;
+	width: 960px;
+	background-color: red;
+}
+.divAlign2{
+	width: 960px;
+	background-color: red;
+}
+.wrapper{
+	justify-content:center;/*子元素水平居中*/
+	align-items:center;/*子元素垂直居中*/
+	display:-webkit-flex;
+}
+
+.raduis_border1{
+	height: 1px;
+	margin: 0 4px;
+	background-color: red;
+	
+}
+.raduis_border2{
+	height: 1px;
+	margin: 0 3px;
+	/*background-color: red;*/
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+	
+}
+.raduis_border3{
+	height: 1px;
+	margin: 0 2px;
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+	/*background-color: red;*/
+
+}
+.raduis_border4{
+	height: 1px;
+	margin: 0 1px;
+	/*background-color: red;*/
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+}
+.radius_content{
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+}
+
+.b1,.b2,.b3,.b4,.b5,.b6,.b7,.b8{height:1px; font-size:1px; overflow:hidden; display:block;}
+.b1,.b8{margin:0 5px;}
+.b2,.b7{margin:0 3px;border-right:2px solid; border-left:2px solid;}
+.b3,.b6{margin:0 2px;border-right:1px solid; border-left:1px solid;}
+.b4,.b5{margin:0 1px;border-right:1px solid; border-left:1px solid; height:2px;}
+.content {border-right:1px solid;border-left:1px solid;overflow:hidden;}
+.color1 .b2,.color1 .b3,.color1 .b4,.color1 .b5,.color1 .b6,.color1 .b7,.color1 .content{border-color:#96C2F1;}
+.color1 .b1,.layout__asideolor1 .b8{background:#96C2F1;}
+/*背景色*/
+.color1 .b2,.color1 .b3,.color1 .b4,.color1 .b5,.color1 .b6,.color1 .b7,.color1 .content{background:#EFF7FF;}
+
+/*圣杯布局实现两列布局*/
+.box1{
+	width: 200px;
+	height: 100px;
+	float: left;
+	background: blue;
+	margin-left: -100%;
+	position: relative;
+	left: -200px;
+}
+.box2{
+	width: 100%;
+	float: left;
+	height: 100px;
+	background: red;
+}
+.box3{
+	width: 100%;
+	height: 100px;
+	background: yellow;
+	float: left;
+}
+.box{
+	min-width: 410px;
+	padding-left: 200px;
+}
+
+
+#left2,#right2{
+	height: 100px;
+}
+#left2{
+	width: 200px;
+	background:red;
+}
+#right2{
+	background-color: blue;
+}
+
+
+
+#main2{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction:row;
+	flex-direction: row;
+	width: 100%;
+}
+#right2{
+	flex:1;
+}
+
+
+
+.left3,.right3{
+	width: 150px;
+}
+.main3{
+	display: flex;
+	display: -webkit-flex;
+	-webkit-flex-direction:row;
+	flex-direction: row;
+
+}
+.left3{
+	background-color: red;
+}
+.right3{
+	background-color: blue;
+}
+.middle1{
+	background-color: yellow;
+	flex:1;/*因为另外两个div固定宽度，所以middle占1为剩下空间的全部*/
+}
+
+/*通过 BFC 规则实现*/
+#bfc{
+	width: 100%;
+	position: relative;
+}
+.aside{
+	width: 100px;
+	height: 150px;
+	float: left;
+	background: blue;
+}
+.mainBfc{
+	height: 200px;
+	background: #f00;
+	overflow:hidden;/*用overflow:hidden触发mainBfc元素的BFC*/
+}
+/*使用绝对定位和相对定位实现两列布局*/
+.divReletive{
+	position:relative;
+}
+.divAbsolute1{
+	position:absolute;
+	top:0;
+	right:0;
+	width:200px;
+	background-color: red;
+}
+.divAbsolute2 {
+	position:absolute;
+	top:0;
+	left:0;
+	width:200px;
+	background-color: blue;
+}
+
+
+/*通过圣杯布局实现三列布局*/
+.body4{margin:0;padding: 0;min-width: 300px;}
+.header4,.footer4{width: 100%;background:#666;height: 30px;clear: both;}
+/*中间部分需要根据浏览器宽度的变化而变化，
+所以要用100%，这里设左中右向左浮动，因为中间100%，左层和右层根本没有位置上去*/
+.bd4{
+	padding: 150px;
+	padding-right: 190;/*中间被左右挡住，需要给外层加padding*/
+
+}
+.left4{
+	background: #E79F6D;
+	width: 150px;
+	float: left;
+	margin-left: -100%;/*如果给左层负margin150后，发现left上去了，因为负到出窗口没位置了，只能往上挪,
+	那么可以得出它只要挪动窗口宽度就能到最左边，所以利用负边距把左右栏定位；*/
+	position:relative;
+	left: -150px;/*采用相对定位方法，各自相对于自己把自己挪出去*/
+}
+.main4{
+	background:#D6D6D6;
+	width: 100%;
+	float: left;
+}
+.right4{
+	background:#77BBDD;
+	width: 190px;
+	float:left;
+	margin-left: -190px;
+	position: relative;
+	right: -190px;
+}
+
+/*利用双飞翼布局实现三列布局*/
+.body5{
+	magin:0;padding: 0;
+	min-width: 300px;
+}
+ .header5,
+    .footer5{ 
+        border: 1px solid #333;
+        background: #aaa;
+        text-align: center;
+    }
+.left5{
+	background-color: red;
+	margin-left: -100%;
+		
+}
+.right5{
+	background-color: blue;
+	margin-left: -200px;
+	
+}
+.main5{
+	background-color: green;
+	width: 100%;
+}
+.left5,.right5,.main5{
+	float: left;
+}
+.left5,.right5{
+	width: 200px;
+}
+.divMain5{
+	margin:0 200px;
+	background-color: green;
+}
+.footer5{
+	clear: both;
+}
+
+/*实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化*/
+/*.wrapper6 {
+  display: grid;
+  grid-template-columns: 100px 10px 100px 10px 100px 10px 100px;
+  grid-template-rows: auto 10px auto 10px auto;
+
+}
+.BOX {
+  background-color: #444;
+  color: #fff;
+  font-size: 150%;
+  padding: 20px;
+  text-align: center;
+
+
+}
+.A{
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2;
+}
+.B {
+  grid-column: 3 / 4; 
+  grid-row: 1 / 2; 
+}
+.C { 
+  grid-column: 5 / 6; 
+  grid-row: 1 / 2;
+}
+.D { 
+  grid-column: 3 / 4; 
+  grid-row: 5 / 6;
+}
+.E { 
+  grid-column: 1 / 2; 
+  grid-row: 3 / 4;
+}
+.F { 
+  grid-column: 3 / 4; 
+  grid-row: 3 / 4;
+}
+.G {
+  grid-column: 5 / 6; 
+  grid-row: 3 / 4;
+}
+.H {
+  grid-column: 5 / 6; 
+  grid-row: 5 / 6;
+}
+.I {
+  grid-column: 1 / 2; 
+  grid-row: 5 / 6;
+}*/
+.wrapper6{
+	zoom:1;
+	background-color: red;
+}
+.wrapper6:after {       
+    content: ".";     /*内容为“.”就是一个英文的句号而已。也可以不写。*/
+    display: block;   /*加入的这个元素转换为块级元素。*/
+    clear: both;     /*清除左右两边浮动。*/
+    visibility: hidden;      /*可见度设为隐藏。注意它和display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/
+    line-height: 0;    /*行高为0；*/
+    height: 0;     /*高度为0；*/
+    font-size:0; 
+    }   /*字体大小为0；*/
+/*.blockA,.blockB,.blockC,.blockD,.blockE,.blockF,.blockG,.blockH,.blockI{
+	margin: 10px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	background-color: blue;
+	float: left;
+}
+*/
+.wrapper6 div{
+	margin: 10px;
+	width: 50px;
+	line-height: 50px;
+	height: 50px;
+	color: white;
+	text-align: center;
+	background-color: blue;
+	float: left;
 }

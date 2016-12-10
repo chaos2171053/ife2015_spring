@@ -26,7 +26,6 @@
 	<p class="capitalize">This is some text in a paragraph.(右对齐）</p>
 	<p class = "pNoWrap">
 		这是一些文本。
-		      这是一些文本。
 		这是一些文本。
 		这是一些文本。
 		这是一些文本。
@@ -34,9 +33,120 @@
 		这是一些文本。
 		这是一些文本。
 		这是一些文本。
-		这是一些文本。
-		这是一些文本。
-		这是一些文本。
+		
 	</p>
-	</body>
-	</html>
+	<h3>用两种方法来实现一个背景为红色、宽度为960px的&lt/div&gt在浏览器中居中</h2>
+		<div class="divAlign1">
+			方法一
+		</div>
+		<div class="wrapper">
+			<div class = "divAlign2">
+				方法二
+			</div>
+		</div>
+		<h3>在不适用border-radius的情况下实现一个可复用的高度和宽度都自适应的圆角矩形</h3>
+		<h4>方法一</h2>
+			<div class  = "raduis_border1"></div> 
+			<div class  = "raduis_border2"></div>  
+			<div class  = "raduis_border3"></div>
+			<div class  = "raduis_border4"></div>  
+			<div class ="radius_content">这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角radius_content矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。</div>
+			<div class  = "raduis_border4"></div>  
+			<div class  = "raduis_border3"></div>
+			<div class  = "raduis_border2"></div> 
+			<div class  = "raduis_border1"></div> 
+			<h4>方法二</h4>
+			<div class="sharp color1">
+				<b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b> 
+				<div class="content">  
+					<h3>纯css圆角框换肤方案一</h3>
+					<div>这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角radius_content矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。这是一个圆角矩形。
+						<br/><br/><br/><br/><br/><p style="text-align:right;"><a href="#" title="123">asd</a></p>
+					</div>
+				</div>
+				<b class="b5"></b><b class="b6"></b><b class="b7"></b><b class="b8"></b>    
+			</div>
+
+			<h3>用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定，右侧部分宽度随浏览器宽度的变化而自适应变化</h3>
+			<h4>方法一:利用圣杯布局</h4>
+			<div class="box">
+				<div class="box2">box2</div>
+				<div class="box1">box1</div>
+			</div>
+            <div class="box3">box3</div>
+
+			<h4>方法二：利用Flex布局</h4>
+			<div id="main2">
+				<div id="left2">DIVA</div>
+				<div id="right2">DIVB</div>
+			</div>
+
+			<h4>方法三：通过 BFC 规则实现</h4>
+			<div id="bfc">
+				<div class="aside"></div>
+				<div class="mainBfc"></div>
+			</div>
+
+			
+
+			
+			
+
+			<h3>用两种不同的方式来实现一个三列布局，其中左侧和右侧的部分宽度固定，中间部分宽度随浏览器宽度的变化而自适应变化</h3>
+			<h4>方法一:利用Flex</h4>
+			<div class="main3">
+				<div class="left3">DIVA</div>
+				<div class="middle1">DIVB</div>
+				<div class="right3">DIVc</div>
+			</div>
+
+			<h4>方法二：利用圣杯布局</h4>
+			<div class="body4">
+			<div class = "header4">Header</div>
+			<div class = "bd4">
+				<div class="main4">Main</div>
+				<div class="left4">Left</div>
+				<div class="right4">Ritht</div>
+			</div>
+			<div class="footer4">Footer</div>
+			</div>
+
+			<h4>方法三：利用双飞翼布局</h4>
+			<div class="body5">
+				<div class="header5">Header</div>
+				<div class="main5">
+					<div class ="divMain5">Main</div>
+				</div>
+				<div class="left5">Left</div>
+				<div class="right5">Right</div>
+				<div class="footer5">Footer</div>
+			</div>
+
+
+			<h3>实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化</h3>
+			<h4>使用Grid布局</h4>
+		<!-- 	<div class="wrapper6">
+				<div class="BOX A">A</div>
+				<div class="BOX B">B</div>
+				<div class="BOX C">C</div>
+				<div class="BOX D">D</div>
+				<div class="BOX E">E</div>
+				<div class="BOX F">F</div>
+				<div class="BOX G">G</div>
+				<div class="BOX H">H</div>
+				<div class="BOX I">I</div>
+			</div> -->
+			<div class="wrapper6">
+				<div class="blockA">A</div>
+				<div class="blockB">B</div>
+				<div class="blockC">C</div>
+				<div class="blockD">D</div>
+				<div class="blockE">E</div>
+				<div class="blockF">F</div>
+				<div class="blockG">G</div>
+				<div class="blockH">H</div>
+				<div class="blockI">I</div>
+			</div>
+
+		</body>
+		</html>
