@@ -251,16 +251,16 @@ p.pNoWrap{
 	magin:0;padding: 0;
 	min-width: 300px;
 }
- .header5,
-    .footer5{ 
-        border: 1px solid #333;
-        background: #aaa;
-        text-align: center;
-    }
+.header5,
+.footer5{ 
+	border: 1px solid #333;
+	background: #aaa;
+	text-align: center;
+}
 .left5{
 	background-color: red;
 	margin-left: -100%;
-		
+	
 }
 .right5{
 	background-color: blue;
@@ -336,20 +336,20 @@ p.pNoWrap{
 .I {
   grid-column: 1 / 2; 
   grid-row: 5 / 6;
-}*/
-.wrapper6{
-	zoom:1;
-	background-color: red;
-}
-.wrapper6:after {       
-    content: ".";     /*内容为“.”就是一个英文的句号而已。也可以不写。*/
-    display: block;   /*加入的这个元素转换为块级元素。*/
-    clear: both;     /*清除左右两边浮动。*/
-    visibility: hidden;      /*可见度设为隐藏。注意它和display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/
-    line-height: 0;    /*行高为0；*/
-    height: 0;     /*高度为0；*/
-    font-size:0; 
-    }   /*字体大小为0；*/
+  }*/
+  .wrapper6{
+  	zoom:1;
+  	background-color: red;
+  }
+  .wrapper6:after {       
+  	content: ".";     /*内容为“.”就是一个英文的句号而已。也可以不写。*/
+  	display: block;   /*加入的这个元素转换为块级元素。*/
+  	clear: both;     /*清除左右两边浮动。*/
+  	visibility: hidden;      /*可见度设为隐藏。注意它和display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/
+  	line-height: 0;    /*行高为0；*/
+  	height: 0;     /*高度为0；*/
+  	font-size:0; 
+  	}   /*字体大小为0；*/
 /*.blockA,.blockB,.blockC,.blockD,.blockE,.blockF,.blockG,.blockH,.blockI{
 	margin: 10px;
 	width: 50px;

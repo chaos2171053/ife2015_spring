@@ -50,7 +50,6 @@
 		通常建议使用这个属性，而不是分别使用单个属性，因为这个属性在较老的浏览器中能够得到更好的支持，而且需要键入的字母也更少。
 
 4.圣杯布局的实现过程思路
-	[参考资料](http://www.cnblogs.com/tinyphp/p/4742922.html)
 	主要通过浮动、负边距、相对定位实现。
 	
 	几个注意的点：
@@ -61,10 +60,10 @@
 		5.为了保证窗口不能缩太小无法展示左右，可以给包裹层加上 min-width。
 		6.把main放在最前面先渲染。
 
+	[参考资料](http://www.cnblogs.com/tinyphp/p/4742922.html)
 5.圣杯布局和双飞翼布局的区别
-	圣杯：把左右栏通过相对定位挪出去；
-
-	双飞翼：通过设置margin-left和margin-right为左右栏腾出位置。
+      双飞翼：通过设置margin-left和margin-right为左右栏腾出位置。
+	圣杯布局和双飞翼布局基本上是一致的，都是两边固定宽度，中间自适应的三栏布局，其中，中间栏放到文档流前面，保证先行渲染。解决方案大体相同，都是三栏全部float:left浮动，区别在于解决中间栏div的内容不被遮挡上，圣杯布局是中间栏在添加相对定位，并配合left和right属性，效果上表现为三栏是单独分开的（如果可以看到空隙的话），而双飞翼布局是在中间栏的div中嵌套一个div，内容写在嵌套的div里，然后对嵌套的div设置margin-left和margin-right，效果上表现为左右两栏在中间栏的上面，中间栏还是100%宽度，只不过中间栏的内容通过margin的值显示在中间
 
 6.清除浮动和闭合浮动的区别
 	1.清除浮动：clear：left | right | both | none；
@@ -76,6 +75,8 @@
 	
 	relative:元素设置了relative时，是相对于元素本身位置进行定位。
 
+	如果父元素定位为相对定位，子元素为绝对定位后，子元素就位于父窗口左上角。利用这个，可是实现主页-头部导航栏的logo定位。
+
 8.计算规则
 	1.在进行普通流中的块级非替换元素的高度计算时，浮动子元素不参与计算。
 
@@ -84,8 +85,27 @@
 	3.两个相邻的普通流中的块框在垂直位置的空白边会发生折叠现象。也就是处于同一个BFC中的两个垂直窗口的margin会重叠。
 
 	4.生成 block formatting context 的元素不会和在流中的子元素发生空白边折叠。
+10.导航ul如何水平摆放
+	解决方法:对li设置左浮动。	
 
+11.CSS设置DIV背景色渐变显示
+    [参考资料](http://jingyan.baidu.com/article/8065f87fed4a3f233124989c.html)
 
+12.在index.html中，三个article的高度由于内容长度不同，导致高度不一样。
+	解决方法:设置其父元素的margin-bottom和padding-bottom一样。
+13.如何绘制圆角
+	Chrome与Safari 写法例如：-webkit-border-radius:5px;
+    Firefox 写法例如:-moz-border-radius:5px;
+    IE10以上写法例如：-ms-border-radius:5px;
+    Opera写法例如：-o-border-radius:5px;
+    不加前缀是给所有浏览器的  border-radius:5px;
+14.原本以为text-align只是文本对齐，发现其实它除了对使文本对齐外，还可以使img标签等一些内联对象对齐。
+   如text-align：center和margin：0 auto的区别:
+   1.text-align:center 设置文本或img标签等内联对象居中对齐。
+
+   2.margin：0 auto 设置块元素居中对齐。
+
+   
 
 ## 收获
 
