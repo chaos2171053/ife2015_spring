@@ -105,6 +105,8 @@
 
    2.margin：0 auto 设置块元素居中对齐。
 
+ 15.font-size:0可以清除display:inline-block元素换行符间隙
+
    
 
 ## 收获
