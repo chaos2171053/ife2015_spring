@@ -51,23 +51,23 @@ background-image <br>
 ###4.圣杯布局的实现过程思路
 主要通过浮动、负边距、相对定位实现。
 	
-几个注意的点：
-1. 中间部分需要根据浏览器宽度的变化而变化，所以要用100%；
-2. 以左边为例，设置向左浮动 float:left，浮动距离为margin-left:-150px；因为负到窗口没有位置了，只能上挪，上挪窗口宽度可以到最左边。
-3. 左右设置浮动后，中间会被挡住，所以给包裹层设置padding；
-4. 设置padding会导致左右栏也缩进来，故采用相对定位，把左右栏挪出去。
-5. 为了保证窗口不能缩太小无法展示左右，可以给包裹层加上 min-width。
-6. 把main放在最前面先渲染。
+几个注意的点：<br>
+1. 中间部分需要根据浏览器宽度的变化而变化，所以要用100%； <br>
+2. 以左边为例，设置向左浮动 float:left，浮动距离为margin-left:-150px；因为负到窗口没有位置了，只能上挪，上挪窗口宽度可以到最左边。 <br>
+3. 左右设置浮动后，中间会被挡住，所以给包裹层设置padding； <br>
+4. 设置padding会导致左右栏也缩进来，故采用相对定位，把左右栏挪出去。 <br>
+5. 为了保证窗口不能缩太小无法展示左右，可以给包裹层加上 min-width。 <br>
+6. 把main放在最前面先渲染。 <br>
 
 [参考资料](http://www.cnblogs.com/tinyphp/p/4742922.html)
 ###5.圣杯布局和双飞翼布局的区别
-双飞翼：通过设置margin-left和margin-right为左右栏腾出位置。<br>
-圣杯布局和双飞翼布局基本上是一致的，都是两边固定宽度，中间自适应的三栏布局，其中，中间栏放到文档流前面，保证先行渲染。解决方案大体相同，都是三栏全部float:left浮动，区别在于解决中间栏div的内容不被遮挡上，圣杯布局是中间栏在添加相对定位，并配合left和right属性，效果上表现为三栏是单独分开的（如果可以看到空隙的话），而双飞翼布局是在中间栏的div中嵌套一个div，内容写在嵌套的div里，然后对嵌套的div设置margin-left和margin-right，效果上表现为左右两栏在中间栏的上面，中间栏还是100%宽度，只不过中间栏的内容通过margin的值显示在中间
+- 双飞翼通过设置margin-left和margin-right为左右栏腾出位置。<br>
+- 圣杯布局和双飞翼布局基本上是一致的，都是两边固定宽度，中间自适应的三栏布局，其中，中间栏放到文档流前面，保证先行渲染。解决方案大体相同，都是三栏全部float:left浮动，区别在于解决中间栏div的内容不被遮挡上，圣杯布局是中间栏在添加相对定位，并配合left和right属性，效果上表现为三栏是单独分开的（如果可以看到空隙的话），而双飞翼布局是在中间栏的div中嵌套一个div，内容写在嵌套的div里，然后对嵌套的div设置margin-left和margin-right，效果上表现为左右两栏在中间栏的上面，中间栏还是100%宽度，只不过中间栏的内容通过margin的值显示在中间。
 
 ###6.清除浮动和闭合浮动的区别
-1.清除浮动：clear：left | right | both | none；
+1. 清除浮动：clear：left | right | both | none；
 
-2.闭合浮动：使浮动元素闭合，从而减少浮动带来的影响。
+2. 闭合浮动：使浮动元素闭合，从而减少浮动带来的影响。
 
 ###7.position属性
 absolute:如果一个元素绝对定位后，其参照物是以离自身最近元素是否设置了相对定位，如果有设置将以离自己最近元素定位，如果没有将往其祖先元素寻找相对定位元素，一直找到html为止。
@@ -84,27 +84,28 @@ relative:元素设置了relative时，是相对于元素本身位置进行定位
 3. 两个相邻的普通流中的块框在垂直位置的空白边会发生折叠现象。也就是处于同一个BFC中的两个垂直窗口的margin会重叠。
 
 4. 生成 block formatting context 的元素不会和在流中的子元素发生空白边折叠。
-###10.导航ul如何水平摆放
+###9.导航ul如何水平摆放
 解决方法:对li设置左浮动。	
 
-###11.CSS设置DIV背景色渐变显示
+###10.CSS设置DIV背景色渐变显示
 [参考资料](http://jingyan.baidu.com/article/8065f87fed4a3f233124989c.html)
 
-###12.在index.html中，三个article的高度由于内容长度不同，导致高度不一样。
+###11.在index.html中，三个article的高度由于内容长度不同，导致高度不一样。
 解决方法:设置其父元素的margin-bottom和padding-bottom一样。
-###13.如何绘制圆角
+
+###12.如何绘制圆角
 - Chrome与Safari 写法例如：-webkit-border-radius:5px;
 - Firefox 写法例如:-moz-border-radius:5px;
 - IE10以上写法例如：-ms-border-radius:5px;
 - Opera写法例如：-o-border-radius:5px;
-- 不加前缀是给所有浏览器的  border-radius:5px;
-###14.text-align
-原本以为text-align只是文本对齐，发现其实它除了对使文本对齐外，还可以使img标签等一些内联对象对齐。
-如text-align：center和margin：0 auto的区别:
-1. text-align:center 设置文本或img标签等内联对象居中对齐。
+- 不加前缀是给所有浏览器的border-radius:5px;
 
-2. margin：0 auto 设置块元素居中对齐。
+###13.text-align的用法
+原本以为text-align只是文本对齐，发现其实它除了对使文本对齐外，还可以使img标签等一些内联对象对齐。<br>
+text-align：center和margin：0 auto的区别:<br>
+- text-align:center 设置文本或img标签等内联对象居中对齐。
+- margin：0 auto 设置块元素居中对齐。
 
-###15.font-size:0可以清除display:inline-block元素换行符间隙
+###14.font-size:0可以清除display:inline-block元素换行符间隙
 [参考资料](http://www.jb51.net/css/100638.html)
 
