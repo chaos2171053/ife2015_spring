@@ -246,3 +246,49 @@
 // console.log(isMobilePhone("12345678910789789798"));
 
 /*task3.1*/
+// 为element增加一个样式名为newClassName的新样式
+function addClass(element, newClassName) {
+    // your implement
+    var result;
+    var valid = typeof newClassName === "string";
+
+    if (valid) {
+        var classes = (newClassName || "").match(/\S+/g) || [];
+        var elemClasses = element.className;
+        var cur = element.nodeType === 1 && (elemClasses ?
+                (" " + elemClasses + " ").replace(/[\t\r\n\f]/g, " ") :
+                " ");
+        if (cur) {
+            var len = classes.length;
+            for (var i = 0; i < len; i++) {
+                if (cur.indexOf(" " + classes[i] + " ") < 0) {
+                    cur += classes[i] + " ";
+                }
+            }
+
+            result = trim(cur);
+            if (elemClasses !== result) {
+                element.className = result;
+            }
+        }
+    }
+
+
+}
+
+// 移除element中的样式oldClassName
+function removeClass(element, oldClassName) {
+    // your implement
+}
+
+
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+function isSiblingNode(element, siblingNode) {
+    // your implement
+}
+
+// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+function getPosition(element) {
+    // your implement
+}
+// your implement
